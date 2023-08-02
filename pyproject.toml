@@ -1,19 +1,24 @@
 [tool.poetry]
-name = "audio-processing"
+name = "audio_processing"
 version = "0.1.0"
 description = ""
 authors = ["Daniel Lee <dannylee1020@gmail.com>"]
 readme = "README.md"
-packages = [{include = "audio-processing"}]
+packages = [{include = "audio_processing"}]
 
 [tool.poetry.dependencies]
 python = "^3.8"
 pydub = "^0.25.1"
 typer = {extras = ["all"], version = "^0.9.0"}
+fastapi = "^0.100.1"
+uvicorn = {extras = ["standard"], version = "^0.23.1"}
 
 [tool.poetry.scripts]
-process-audio = 'audio-processing.main:run'
+process-audio = 'audio_processing.main:run'
 
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.4.1"
 
 [build-system]
 requires = ["poetry-core"]
